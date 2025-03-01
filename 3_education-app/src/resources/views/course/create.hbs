@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card mt-3 shadow-sm p-3">
+      <form class="mt-3" method="POST" action="/courses/store">
+        <h3>Thêm mới khóa học</h3>
+        <hr class="dropdown-divider" />
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên khóa học</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            autocomplete="off"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Mô tả</label>
+          <input class="form-control" name="description" autocomplete="off" />
+        </div>
+        <div class="mb-3">
+          <label for="videoId" class="form-label">Video ID</label>
+          <input class="form-control" name="videoId" autocomplete="off" />
+        </div>
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-end">
+            <a href="/me/stored/courses" class="btn btn-outline-secondary" style="margin-right: 12px;">Khóa học của tôi</a>
+            <button type="submit" class="btn btn-primary">Thêm <i class="fas fa-plus"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

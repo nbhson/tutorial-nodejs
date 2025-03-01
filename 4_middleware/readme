@@ -1,0 +1,20 @@
+  ## Middleware - Ý Nghĩa
+
+    Phần mềm trung gian (đứng giữa các thành phần trong mô hình phần mềm)
+    Browser (client) ========== Request ==========> Server (Node)
+    Browser (client) <========== Request ========== Server (Node)
+
+
+  ## Middleware - Ý Nghĩa
+
+    Giống như bác bảo vệ
+    Nhà ====================> bác bảo vệ 1 (Middleware 1): bác bảo vệ 2 (Middleware 2): Tòa nhà sự kiện
+    Nhà <==================== bác bảo vệ 1 (Middleware 1): bác bảo vệ 2 (Middleware 2): Tòa nhà sự kiện
+
+    # Soát vé/kiểm soát (validation)
+    # Cho phép vào (validation passed)/Không cho vào (Validation Fail)
+    # Chỉnh sửa/thay đổi
+
+  ## Middleware - Chức năng 
+    - Xác thực / phân quyền
+    - Chia sẻ các giá trị của biến tới tất cả các view

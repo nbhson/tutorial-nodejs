@@ -1,0 +1,35 @@
+@import 'variable';
+
+/*HOME*/
+.card-text-detail {
+  height: 4.5rem;
+  display: block;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*HEADER*/
+img.avatar {
+  width: 40px;
+  margin-right: 16px;
+  border-radius: 25px;
+}
+.btn-toggle {
+  padding: 0 8px;
+  outline: none;
+}
+
+/*SHOW COURSE DETAIL*/
+iframe {
+  width: 100%;
+}
+.show-image {
+  width: 100%;
+}

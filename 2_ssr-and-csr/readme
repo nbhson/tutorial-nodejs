@@ -1,0 +1,18 @@
+# Server side rendering (phía máy chủ)
+
+  Mã nguồn HTML được trả về trực tiếp mà nằm trong cái source thì là SSR
+  (ctrl + U -> nhiều code) 
+  SEO Tối ưu hóa để tăng thứ hạng tìm kiếm trên google
+  Nhanh hơn ở lần truy cập đầu tiên
+
+
+# Client side rendering (phía khác hàng)
+
+  Mã nguồn HTML được trả về trong thẻ main với id="main" là CSR (ctrl + U ->
+  ít code) 
+  Client sẽ tự render rồi mới đưa vào (append) thẻ main đó
+  => không tốt cho SEO (google bot không tìm thấy thông tin do đem về client nó mới render)
+
+# Có những phần trong trang web cần SSR để SEO 
+# Còn những phần không cần SEO thì chỉ cần SSR
+  
