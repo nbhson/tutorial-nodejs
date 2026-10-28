@@ -1,5 +1,5 @@
-const { multipleMongooseToObject } = require('../../util/mongoose');
-const Course = require('../models/Course');
+import Course from '../models/Course.js';
+import { multipleMongooseToObject } from '../../util/mongoose.js';
 
 class SiteController {
   // [GET] /
@@ -21,7 +21,6 @@ class SiteController {
           courses: multipleMongooseToObject(courses),
         });
       })
-      // .catch(error => next(err))
       .catch(next);
   }
 
@@ -31,4 +30,4 @@ class SiteController {
   }
 }
 
-module.exports = new SiteController();
+export default new SiteController();

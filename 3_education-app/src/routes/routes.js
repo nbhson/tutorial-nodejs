@@ -1,6 +1,6 @@
-const siteRouter = require('./site');
-const courseRouter = require('./course');
-const meRouter = require('./me');
+import siteRouter from './site.js';
+import courseRouter from './course.js';
+import meRouter from './me.js';
 
 function route(app) {
   app.use('/courses', courseRouter);
@@ -8,4 +8,4 @@ function route(app) {
   app.use('/', siteRouter);
 }
 
-module.exports = route;
+export default route;

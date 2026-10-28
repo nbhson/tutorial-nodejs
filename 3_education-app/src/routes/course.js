@@ -1,5 +1,5 @@
-const express = require('express');
-const courseController = require('../app/controllers/CourseController');
+import express from 'express';
+import courseController from '../app/controllers/CourseController.js';
 
 const router = express.Router();
 
@@ -12,4 +12,4 @@ router.patch('/:id/restore', courseController.restore);
 router.delete('/:id/delete', courseController.delete);
 router.get('/:slug', courseController.show);
 
-module.exports = router;
+export default router;

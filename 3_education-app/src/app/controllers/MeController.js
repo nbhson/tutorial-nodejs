@@ -1,5 +1,5 @@
-const Course = require('../models/Course');
-const { multipleMongooseToObject } = require('../../util/mongoose');
+import Course from '../models/Course.js';
+import { multipleMongooseToObject } from '../../util/mongoose.js';
 
 class MeController {
   // [GET] /me/stored/courses/
@@ -17,6 +17,7 @@ class MeController {
       .catch(next);
   }
 
+  // [GET] /me/trash/courses
   trashCourses(req, res, next) {
     Course.findDeleted()
       .then((courses) => {
@@ -28,4 +29,4 @@ class MeController {
   }
 }
 
-module.exports = new MeController();
+export default new MeController();

@@ -1,4 +1,4 @@
-const Course = require('../models/Course');
+import Course from '../models/Course.js';
 
 class CourseController {
   // [GET] /courses/:slug
@@ -23,7 +23,7 @@ class CourseController {
     small
       .save()
       .then(() => res.redirect('/'))
-      .catch((error) => {});
+      .catch(next); // trong Express 5, promise bi reject se tu dong chuyen sang error handler
   }
 
   // [GET] /courses/:id/edit
@@ -46,7 +46,7 @@ class CourseController {
     Course.delete({
       _id: req.params.id,
     }) // Course.delete: soft delete
-      .then(() => res.redirect('back'))
+      .then(() => res.redirect(req.get('Referrer') || '/')) // Express 5: khong con ho tro res.redirect('back')
       .catch(next);
   }
 
@@ -55,7 +55,7 @@ class CourseController {
     Course.restore({
       _id: req.params.id,
     })
-      .then(() => res.redirect('back'))
+      .then(() => res.redirect(req.get('Referrer') || '/')) // Express 5: khong con ho tro res.redirect('back')
       .catch(next);
   }
 
@@ -64,9 +64,9 @@ class CourseController {
     Course.findOneAndDelete({
       _id: req.params.id,
     })
-      .then(() => res.redirect('back'))
+      .then(() => res.redirect(req.get('Referrer') || '/')) // Express 5: khong con ho tro res.redirect('back')
       .catch(next);
   }
 }
 
-module.exports = new CourseController();
+export default new CourseController();

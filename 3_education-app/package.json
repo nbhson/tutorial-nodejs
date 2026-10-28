@@ -1,28 +1,32 @@
 {
-  "name": "3_blog",
+  "name": "3_education-app",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "nodemon --inspect src/index.js",
-    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
+    "watch": "sass --watch src/resources/scss:src/public/css",
     "format-code": "prettier --single-quote --print-width 120 --tab-width 2 --trailing-comma all --write \"src/**/*.{js,json,scss}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.2",
-    "express-handlebars": "^6.0.2",
+    "express": "^5.3.0",
+    "express-handlebars": "^9.0.3",
     "method-override": "^3.0.0",
-    "mongoose": "^6.1.7",
-    "mongoose-delete": "^0.5.4",
-    "mongoose-slug-generator": "^1.0.4"
+    "mongoose": "^9.11.4",
+    "mongoose-delete": "^1.0.7",
+    "mongoose-slug-updater": "^3.3.0"
   },
   "devDependencies": {
-    "morgan": "^1.10.0",
-    "node-sass": "^7.0.1",
-    "nodemon": "^2.0.15",
-    "prettier": "^2.5.1"
+    "morgan": "^1.12.1",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.9.10",
+    "sass": "^1.106.1"
   }
 }

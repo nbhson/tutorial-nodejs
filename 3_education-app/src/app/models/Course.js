@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-const slug = require('mongoose-slug-generator');
-var mongoose_delete = require('mongoose-delete');
+import mongoose from 'mongoose';
+import mongooseSlugUpdater from 'mongoose-slug-updater';
+import mongooseDelete from 'mongoose-delete';
 
-mongoose.plugin(slug);
+mongoose.plugin(mongooseSlugUpdater);
 
 const Schema = mongoose.Schema;
 
@@ -23,10 +23,6 @@ const Course = new Schema(
       type: String,
       default: '',
     },
-    slug: {
-      type: String,
-      default: '',
-    },
     videoId: {
       type: String,
       default: '',
@@ -38,31 +34,25 @@ const Course = new Schema(
     },
     slug: {
       type: String,
-      slug: 'name',
+      slug: 'name', // tu dong tao slug tu field 'name' (mongoose-slug-updater)
       unique: true,
-    }, // unique chỉ tồn tại 1 record với value duy nhất
+    }, // unique chi ton tai 1 record voi value duy nhat
     deleted: {
       type: Boolean,
     },
     deletedAt: {
       type: Date,
     },
-    createdAt: {
-      type: Date,
-    },
-    updatedAt: {
-      type: Date,
-    },
   },
   {
-    timestamps: true,
+    timestamps: true, // tu dong tao createdAt & updatedAt
   },
 );
 
-Course.plugin(mongoose_delete);
-Course.plugin(mongoose_delete, {
+Course.plugin(mongooseDelete);
+Course.plugin(mongooseDelete, {
   deletedAt: true,
   overrideMethods: 'all',
-}); // những thằng nào có field deleted:true sẽ không hiện ra & kèm thời gian xóa
+}); // nhung document co field deleted:true se khong hien ra & kem thoi gian xoa
 
-module.exports = mongoose.model('Course', Course);
+export default mongoose.model('Course', Course);
